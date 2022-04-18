@@ -48,3 +48,14 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+#gem "searchkick"
+#gem "elasticsearch"
+gem 'will_paginate', '~> 3.3'
+gem 'twilio-ruby'
+gem 'email_validator'
+gem "cpf_cnpj"
+
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
+end
