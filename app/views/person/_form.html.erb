@@ -1,0 +1,11 @@
+<%= simple_form_for @cliente do |f| %>
+  <%= f.input :nome_completo %>
+  <%= f.input :nome_conhecido %>
+  <%#= f.input :data_nascimento %>
+  <%= f.input :data_nascimento, :as => :date_picker, :label => 'Data de Nascimento' %>
+  <%= f.input :sexo %>
+  <%= f.submit "Salvar", class: "btn btn-primary" %>
+<% end %>
+<script>
+//  restart_datapicker();
+</script>

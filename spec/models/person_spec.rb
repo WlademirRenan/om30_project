@@ -2,6 +2,9 @@ require 'rails_helper'
 
 RSpec.describe Person, type: :model do
   context '#validations' do
+  let!(:person) { create(:person) }
+  let(:invalid_person) { build(:person, :invalid_person)}
+
     it { is_expected.to validate_presence_of(:name) }
     it { is_expected.to validate_presence_of(:cpf) }
     it { is_expected.to validate_presence_of(:cns) }
@@ -12,6 +15,12 @@ RSpec.describe Person, type: :model do
     it { is_expected.to validate_presence_of(:status) }
     
     it { is_expected.not_to validate_presence_of(:address_id) }
+
+    it { is_expected.to validate_uniqueness_of(:cpf).case_insensitive }
+
+    it { expect(person.valid?).to eq true }
+
+    it { expect(invalid_person.valid?).to eq false }
   end
 
   describe '#initialize' do

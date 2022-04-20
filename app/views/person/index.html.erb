@@ -1,0 +1,29 @@
+<h2>Clientes</h2><br>
+<table class="table-hover table-bordered table-striped table-100">
+  <tr>
+    <th>Código</th>
+    <th>Nome Completo</th>
+    <th>Nome Conhecido</th>
+    <th>Data de Nascimento</th>
+    <th>Sexo</th>
+    <th>Funções</th>
+  </tr>
+  <% @clientes.each do |cliente| %>
+    <tr>
+      <td><%= cliente.id %></td>
+      <td><%= cliente.nome_completo %></td>
+      <td><%= cliente.nome_conhecido %></td>
+      <td><%= cliente.data_de_nascimento %></td>
+      <td><%= cliente.sexo %></td>
+      <td>
+        <%= link_to("<i class='fa fa-pencil'></i> Editar".html_safe,
+         edit_cliente_path(cliente.id)) %>
+         &nbsp;&nbsp;
+        <%= link_to("<i class='fa fa-search'></i> Detalhes".html_safe,
+        cliente_path(cliente.id)) %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+<br>
+<%= link_to "<i class='fa fa-plus'></i> Adicionar Cliente".html_safe, new_cliente_path %>
