@@ -2,7 +2,7 @@ FactoryBot.define do
     factory :person do
       name { Faker::Name.name}
       cpf { CPF.generate }
-      cns { '123456' }
+      cns { '174817056080009' }
       email { Faker::Internet.email }
       birthday { Time.now }
       fone_number { Faker::Base.numerify('(##) ####-####') }
@@ -12,5 +12,7 @@ FactoryBot.define do
     end
     trait :invalid_person do
       cpf { '12312312312' }
+      email { 'aaa' }
+      cns { '012345678912345'}
     end
   end
