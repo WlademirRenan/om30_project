@@ -1,32 +1,32 @@
-<h2>Detalhes de Cliente</h2>
+<h2>Detalhes do Municipe</h2>
 <br>
 <table class="table-hover table-bordered table-striped table-100">
   <tr>
     <th>Código</th>
-    <td><%= @cliente.id -%></td>
+    <td><%= @person.id -%></td>
   </tr>
   <tr>
     <th>Nome Completo:</th>
-    <td><%= @cliente.nome_completo -%></td>
+    <td><%= @person.nome_completo -%></td>
   </tr>
   <tr>
     <th>Nome Conhecido:</th>
-    <td><%= @cliente.nome_conhecido -%></td>
+    <td><%= @person.nome_conhecido -%></td>
   </tr>
   <tr>
     <th>Data de Nascimento:</th>
-    <td><%= @cliente.data_de_nascimento -%></td>
+    <td><%= @person.data_de_nascimento -%></td>
   </tr>
   <tr>
     <th>Sexo:</th>
-    <td><%= @cliente.sexo-%></td>
+    <td><%= @person.sexo-%></td>
   </tr>
 </table>
 <br><br>
 <%= link_to "<i class='fa fa-chevron-left'></i>Voltar".html_safe,
- clientes_path -%>
+ persons_path -%>
 &nbsp;&nbsp;|&nbsp;&nbsp;
 <%= link_to "<i class='fa fa-pencil'></i> Editar".html_safe,
- edit_cliente_path(@cliente.id) %>
+ edit_person_path(@person.id) %>
 &nbsp;&nbsp;|&nbsp;&nbsp;
 Arquiva

@@ -1,4 +1,4 @@
-class PersonController < ApplicationController
+class PersonsController < ApplicationController
     before_action :set_person, only: [:show, :edit, :update]
   
     # GET /clientes
@@ -60,6 +60,11 @@ class PersonController < ApplicationController
   
       # Never trust parameters from the scary internet, only allow the white list through.
       def person_params
-        params.require(:person).permit(:name, :cpf, :cns, :email, :birthday, :fone_number, :image, :status, :address_id)
+        params.require(:person).permit(
+          :name, :cpf, :cns, :email, :birthday, :phone_number, :image, :status, :address_id,
+          address_attributes: [
+            :zipcode, :street, :number, :neighborhood, :city, :uf, :ibge_code
+          ]
+        )
       end
   end

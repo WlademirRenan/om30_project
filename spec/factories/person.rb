@@ -5,7 +5,7 @@ FactoryBot.define do
       cns { '174817056080009' }
       email { Faker::Internet.email }
       birthday { Time.now }
-      fone_number { Faker::Base.numerify('(##) ####-####') }
+      phone_number { Faker::Base.numerify('(##) ####-####') }
       image { 'a' }
       status { true }
       address_id { 1 }

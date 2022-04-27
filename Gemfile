@@ -53,12 +53,13 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'will_paginate', '~> 3.3'
 gem 'twilio-ruby'
 gem 'email_validator'
-gem "cpf_cnpj"
+gem 'cpf_cnpj'
+gem 'simple_form'
 
 group :development, :test do
   gem 'rspec-rails'
   gem 'shoulda-matchers'
-  gem "factory_bot_rails"
+  gem 'factory_bot_rails'
   gem 'pry'
   gem 'faker'
 end

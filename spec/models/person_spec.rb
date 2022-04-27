@@ -10,7 +10,7 @@ RSpec.describe Person, type: :model do
     it { is_expected.to validate_presence_of(:cns) }
     it { is_expected.to validate_presence_of(:email) }
     it { is_expected.to validate_presence_of(:birthday) }
-    it { is_expected.to validate_presence_of(:fone_number) }
+    it { is_expected.to validate_presence_of(:phone_number) }
     it { is_expected.to validate_presence_of(:image) }
     it { is_expected.to validate_presence_of(:status) }
     

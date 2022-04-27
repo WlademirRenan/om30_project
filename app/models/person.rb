@@ -1,5 +1,8 @@
 class Person < ApplicationRecord
-  validates :name, :cpf, :cns, :email, :birthday, :fone_number, :image, :status, presence: true
+  has_one :address
+  accepts_nested_attributes_for :address
+
+  validates :name, :cpf, :cns, :email, :birthday, :phone_number, :image, :status, presence: true
   validates :cpf, uniqueness: { case_sensitive: false }
   validate :cpf_validator, :cns_validator, :email_validator
 

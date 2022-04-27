@@ -1,0 +1,15 @@
+<%= simple_form_for @person, url: persons_path do |f| %>
+  <%= f.input :name %>
+  <%= f.input :cpf %>
+  <%= f.input :cns %>
+  <%= f.input :birthday %>
+  <%= f.input :email %>
+  <%#= f.input :data_nascimento, :as => :date_picker, :label => 'Data de Nascimento' %>
+  <%= f.input :phone_number %>
+  <%= f.input :image %>
+  <%= f.input :status %>
+  <%= f.submit "Salvar", class: "btn btn-primary" %>
+<% end %>
+<script>
+//  restart_datapicker();
+</script>
