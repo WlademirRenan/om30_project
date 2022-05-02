@@ -22,6 +22,40 @@
     <td><%= @person.sexo-%></td>
   </tr>
 </table>
+<table>
+  <tr>
+    <th>Cep</th>
+    <td><%= @person.address.zipcode -%></td>
+  </tr>
+  <tr>
+    <th>Logradouro</th>
+    <td><%= @person.address.street -%></td>
+  </tr>
+  <tr>
+    <th>Número</th>
+    <td><%= @person.address.number -%></td>
+  </tr>
+  <tr>
+    <th>Complemento</th>
+    <td><%= @person.address.complement -%></td>
+  </tr>
+  <tr>
+    <th>Bairro</th>
+    <td><%= @person.address.neighborhood -%></td>
+  </tr>
+  <tr>
+    <th>Cidade</th>
+    <td><%= @person.address.city -%></td>
+  </tr>
+  <tr>
+    <th>Estado</th>
+    <td><%= @person.address.uf -%></td>
+  </tr>
+  <tr>
+    <th>Código do IBGE</th>
+    <td><%= @person.address.ibge_code -%></td>
+  </tr>
+</table>
 <br><br>
 <%= link_to "<i class='fa fa-chevron-left'></i>Voltar".html_safe,
  persons_path -%>

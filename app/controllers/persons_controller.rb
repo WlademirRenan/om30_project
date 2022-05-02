@@ -63,7 +63,7 @@ class PersonsController < ApplicationController
         params.require(:person).permit(
           :name, :cpf, :cns, :email, :birthday, :phone_number, :image, :status, :address_id,
           address_attributes: [
-            :zipcode, :street, :number, :neighborhood, :city, :uf, :ibge_code
+            :zipcode, :street, :number, :neighborhood, :city, :uf, :ibge_code, :complement
           ]
         )
       end
