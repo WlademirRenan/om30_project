@@ -7,53 +7,69 @@
   </tr>
   <tr>
     <th>Nome Completo:</th>
-    <td><%= @person.nome_completo -%></td>
+    <td><%= @person.name -%></td>
   </tr>
   <tr>
-    <th>Nome Conhecido:</th>
-    <td><%= @person.nome_conhecido -%></td>
+    <th>CPF:</th>
+    <td><%= @person.cpf -%></td>
+  </tr>
+  <tr>
+    <th>CNS:</th>
+    <td><%= @person.cns -%></td>
   </tr>
   <tr>
     <th>Data de Nascimento:</th>
-    <td><%= @person.data_de_nascimento -%></td>
+    <td><%= @person.birthday -%></td>
   </tr>
   <tr>
-    <th>Sexo:</th>
-    <td><%= @person.sexo-%></td>
+    <th>Email:</th>
+    <td><%= @person.email-%></td>
+  </tr>
+  <tr>
+    <th>Telefone:</th>
+    <td><%= @person.phone_number-%></td>
+  </tr>
+  <tr>
+    <th>Foto:</th>
+    <td><%= @person.image-%></td>
+  </tr>
+  <tr>
+    <th>Status:</th>
+    <td><%= @person.status-%></td>
   </tr>
 </table>
-<table>
+<table class='table-hover table-bordered table-striped table-100'>
   <tr>
     <th>Cep</th>
-    <td><%= @person.address.zipcode -%></td>
+    <td><%= @person.address&.zipcode -%>&nbsp;</td>
   </tr>
   <tr>
     <th>Logradouro</th>
-    <td><%= @person.address.street -%></td>
+    <td><%= @person.address&.street -%></td>
   </tr>
   <tr>
     <th>Número</th>
-    <td><%= @person.address.number -%></td>
+    <td><%= @person.address&.number -%></td>
   </tr>
   <tr>
     <th>Complemento</th>
-    <td><%= @person.address.complement -%></td>
+    <td><%= @person.address&.complement -%></td>
   </tr>
   <tr>
     <th>Bairro</th>
-    <td><%= @person.address.neighborhood -%></td>
+    <td><%= @person.address&.neighborhood -%></td>
   </tr>
   <tr>
     <th>Cidade</th>
-    <td><%= @person.address.city -%></td>
+    <td><%= @person.address&.city -%></td>
   </tr>
   <tr>
     <th>Estado</th>
-    <td><%= @person.address.uf -%></td>
+    <td><%= @person.address&.uf -%></td>
   </tr>
   <tr>
     <th>Código do IBGE</th>
-    <td><%= @person.address.ibge_code -%></td>
+    <td><%= @person.address&.ibge_code -%></td>
   </tr>
 </table>
 <br><br>

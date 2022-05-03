@@ -9,6 +9,7 @@ class CreateAddresses < ActiveRecord::Migration
       t.string :uf, null: false
       t.string :number, null: false
       t.string :code_ibge
+      t.integer :person_id
 
       t.timestamps
     end

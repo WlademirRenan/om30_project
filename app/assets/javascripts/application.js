@@ -14,4 +14,15 @@
 //= require jquery_ujs
 //= require bootstrap.min
 //= require turbolinks
+//= require moment
+//= require moment/pt-br
+//= require bootstrap-datetimepicker
 //= require_tree .
+
+
+jQuery(document).ready(function(){
+    $('.datetimepicker').datetimepicker({
+      locale: 'pt-br',
+      format: 'DD/MM/YYYY'
+    });
+  })
