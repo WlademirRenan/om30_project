@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe Person, type: :model do
   context '#validations' do
-  let!(:person) { create(:person) }
-  let(:invalid_person) { build(:person, :invalid_person)}
+    let!(:person) { create(:person) }
+    let(:invalid_person) { build(:person, :invalid_person)}
 
     it { is_expected.to validate_presence_of(:name) }
     it { is_expected.to validate_presence_of(:cpf) }
@@ -21,6 +21,11 @@ RSpec.describe Person, type: :model do
     it { expect(person.valid?).to eq true }
 
     it { expect(invalid_person.valid?).to eq false }
+
+    it 'should return errors 'do
+      invalid_person.save
+      expect(invalid_person.errors.size).to eq 3
+    end
   end
 
   describe '#initialize' do
@@ -29,7 +34,8 @@ RSpec.describe Person, type: :model do
     let(:params) do
       {
         name: 'João',
-        cpf: '01234567890'
+        cpf: '01234567890',
+        cns: '174817056080009'
       }
     end
 
