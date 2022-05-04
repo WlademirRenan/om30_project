@@ -9,7 +9,7 @@
   <%= f.input :image %>
   <%= f.input :status, as: :radio_buttons %>
   <%= f.simple_fields_for :address do |a| %>
-    <%= a.input :zipcode %>
+    <%= a.input :zipcode, input_html: { class: 'zipcode' } %>
     <%= a.input :street %>
     <%= a.input :number %>
     <%= a.input :complement, required: false %>

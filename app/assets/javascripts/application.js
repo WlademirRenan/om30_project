@@ -41,4 +41,5 @@ jQuery(document).ready(function(){
   $('.cpf').mask('000.000.000-00', options)
   $('.data_nasc').mask('00/00/0000', options)
   $('.phone').mask(maskPhone, options);
+  $('.zipcode').mask('00000-000', options)
 })

@@ -1,3 +1,4 @@
+<% base = 'activerecord.attributes.address' %>
 <%= simple_form_for @person, url: persons_path do |f| %>
   <%= f.input :name %>
   <%= f.input :cpf, input_html: { :maxlength => 15, class: 'cpf' } %>
@@ -8,14 +9,14 @@
   <%= f.input :image %>
   <%= f.input :status, as: :radio_buttons %>
   <%= simple_fields_for :address do |a| %>
-    <%= a.input :zipcode %>
-    <%= a.input :street %>
-    <%= a.input :number %>
-    <%= a.input :complement, required: false %>
-    <%= a.input :neighborhood %>
-    <%= a.input :city %>
-    <%= a.input :uf %>
-    <%= a.input :code_ibge, required: false %>
+    <%= a.input :zipcode, label: t("#{base}.zipcode"), input_html: { class: 'zipcode' } %>
+    <%= a.input :street, label: t("#{base}.street") %>
+    <%= a.input :number, label: t("#{base}.number") %>
+    <%= a.input :complement, label: t("#{base}.complement"), required: false %>
+    <%= a.input :neighborhood, label: t("#{base}.neighborhood") %>
+    <%= a.input :city, label: t("#{base}.city") %>
+    <%= a.input :uf, label: t("#{base}.uf") %>
+    <%= a.input :code_ibge, label: t("#{base}.code_ibge"), required: false %>
   <% end %>
   <%= f.submit "Salvar", class: "btn btn-primary" %>
 <% end %>

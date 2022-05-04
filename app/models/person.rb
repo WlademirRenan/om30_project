@@ -7,22 +7,19 @@ class Person < ApplicationRecord
   validate :cpf_validator, :cns_validator, :email_validator
 
   def cpf_validator
-    errors.add(:cpf, 'Cpf inválido') unless CPF.valid?(cpf)
+    errors.add(:cpf, 'inválido') unless CPF.valid?(cpf)
   end
 
-  #validar cns
   def cns_validator
-    errors.add(:cns, 'CNS inválido') unless ::Cns::Validator.valid?(cns.to_s)
+    errors.add(:cns, 'inválido') unless ::Cns::Validator.valid?(cns.to_s)
   end
 
   def email_validator
-    errors.add(:email, 'E-mail inválido') unless EmailValidator.valid?(email)
+    errors.add(:email, 'inválido') unless EmailValidator.valid?(email)
   end
 
   #after_commit sms
   #after_commit email
 
   #carrier_wave para image em 2 tamanhos
-
-  #nested attr para address
 end

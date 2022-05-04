@@ -1,0 +1,26 @@
+pt-BR:
+  activerecord:
+    models:
+      person:
+        one: Munícipe
+        other: Munícipes
+    attributes:
+      person:
+        name: Nome
+        cpf: CPF
+        cns: CNS
+        email: E-mail
+        birthday: Data de nascimento
+        phone_number: Telefone com DDD
+        image: Foto
+        status:
+          one: Ativo
+    errors:
+      models:
+        person:
+          cpf:
+            invalid: CPF inválido
+          cns:
+            invalid: CNS inválido
+          email:
+            invalid: e-mail inválido
