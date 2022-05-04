@@ -31,6 +31,9 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 gem 'devise'
 gem 'bootstrap-sass'
+gem 'momentjs-rails', '>= 2.9.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
+gem 'jquery_mask_rails', '~> 0.1.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -53,12 +56,13 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'will_paginate', '~> 3.3'
 gem 'twilio-ruby'
 gem 'email_validator'
-gem "cpf_cnpj"
+gem 'cpf_cnpj'
+gem 'simple_form'
 
 group :development, :test do
   gem 'rspec-rails'
   gem 'shoulda-matchers'
-  gem "factory_bot_rails"
+  gem 'factory_bot_rails'
   gem 'pry'
   gem 'faker'
 end

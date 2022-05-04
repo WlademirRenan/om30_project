@@ -1,0 +1,22 @@
+<h2> Editar Municipe </h2>
+<%= simple_form_for @person, url: person_path do |f| %>
+  <%= f.input :name %>
+  <%= f.input :cpf, input_html: { :maxlength => 15, class: 'cpf' } %>
+  <%= f.input :cns %>
+  <%= f.input :birthday, as: :date_time_picker, label: 'Data de Nascimento', input_html: { class: 'data_nasc' } %>
+  <%= f.input :email, type: 'email' %>
+  <%= f.input :phone_number, input_html: { class: 'phone' } %>
+  <%= f.input :image %>
+  <%= f.input :status, as: :radio_buttons %>
+  <%= f.simple_fields_for :address do |a| %>
+    <%= a.input :zipcode %>
+    <%= a.input :street %>
+    <%= a.input :number %>
+    <%= a.input :complement, required: false %>
+    <%= a.input :neighborhood %>
+    <%= a.input :city %>
+    <%= a.input :uf %>
+    <%= a.input :code_ibge, required: false %>
+  <% end %>
+  <%= f.submit "Salvar", class: "btn btn-primary" %>
+<% end %>

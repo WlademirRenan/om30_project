@@ -6,7 +6,7 @@ class CreatePeople < ActiveRecord::Migration
       t.string :cns, null: false
       t.string :email, null: false
       t.date :birthday, null: false
-      t.integer :fone_number, null: false
+      t.string :phone_number, null: false
       t.string :image, null: false
       t.boolean :status, null: false
       t.integer :address_id

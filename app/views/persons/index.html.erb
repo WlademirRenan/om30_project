@@ -1,0 +1,37 @@
+<h2>Municipe</h2><br>
+<table class="table-hover table-bordered table-striped table-100">
+  <tr>
+    <th>Código</th>
+    <th>Nome completo</th>
+    <th>CPF</th>
+    <th>CNS(cartão nacional de saúde)</th>
+    <th>Data de Nascimento</th>
+    <th>Email</th>
+    <th>Telefone</th>
+    <th>Foto</th>
+    <th>Status</th>
+    <th>Funções</th>
+  </tr>
+  <% @persons.each do |person| %>
+    <tr>
+      <td><%= person.id %></td>
+      <td><%= person.name %></td>
+      <td><%= person.cpf %></td>
+      <td><%= person.cns %></td>
+      <td><%= person.birthday %></td>
+      <td><%= person.email %></td>
+      <td><%= person.phone_number %></td>
+      <td><%= person.image %></td>
+      <td><%= person.status %></td>
+      <td>
+        <%= link_to("<i class='fa fa-pencil'></i> Editar".html_safe,
+         edit_person_path(person.id)) %>
+         &nbsp;&nbsp;
+        <%= link_to("<i class='fa fa-search'></i> Detalhes".html_safe,
+        person_path(person.id)) %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+<br>
+<%= link_to "<i class='fa fa-plus'></i> Adicionar Municipe".html_safe, new_person_path %>
