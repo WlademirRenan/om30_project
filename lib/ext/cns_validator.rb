@@ -54,7 +54,7 @@ module Cns
         cns_generated =
           if dv == 10
             sum += 2
-            dv = 11 - (soma % 11)
+            dv = 11 - (sum % 11)
             "#{pis}001#{dv}"
           else
             "#{pis}000#{dv}"

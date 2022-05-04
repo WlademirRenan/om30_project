@@ -17,12 +17,28 @@
 //= require moment
 //= require moment/pt-br
 //= require bootstrap-datetimepicker
+//= require jquery.mask
 //= require_tree .
 
 
 jQuery(document).ready(function(){
-    $('.datetimepicker').datetimepicker({
-      locale: 'pt-br',
-      format: 'DD/MM/YYYY'
-    });
-  })
+  $('.datetimepicker').datetimepicker({
+    locale: 'pt-br',
+    format: 'DD/MM/YYYY'
+  });
+
+  var maskBehavior = function (val) {},
+  options = {
+    onKeyPress: function(val, e, field, options) {
+      field.mask(maskBehavior.apply({}, arguments), options);
+    }
+  };
+
+  var maskPhone = function (val){
+    return val.replace(/\D/g, '').length === 11 ? '(00) 00000-0000' : '(00) 0000-0000'
+  };
+
+  $('.cpf').mask('000.000.000-00', options)
+  $('.data_nasc').mask('00/00/0000', options)
+  $('.phone').mask(maskPhone, options);
+})
