@@ -15,6 +15,7 @@ class PersonsController < ApplicationController
   # GET /persons/new
   def new
     @person = Person.new
+    @person.address = Address.new
   end
 
   # GET /persons/1/edit
@@ -51,28 +52,19 @@ class PersonsController < ApplicationController
     end
   end
 
-
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_person
-      @person = Person.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_person
+    @person = Person.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def person_params
-      parameters = params.require(:person).permit(
-        :name, :cpf, :cns, :email, :birthday, :phone_number, :image, :status, :address_id,
-        address_attributes: [
-          :zipcode, :street, :number, :neighborhood, :city, :uf, :code_ibge, :complement
-        ]
-      )
-      parameters[:address_attributes] = address_params if params[:address]
-      parameters
-    end
-
-    def address_params
-      params.require(:address).permit(
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def person_params
+    params.require(:person).permit(
+      :name, :cpf, :cns, :email, :birthday, :phone_number, :image, :status, :address_id,
+      address_attributes: [
         :zipcode, :street, :number, :neighborhood, :city, :uf, :code_ibge, :complement
-      )
-    end
+      ]
+    )
+  end
 end
